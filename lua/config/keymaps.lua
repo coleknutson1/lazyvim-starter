@@ -23,3 +23,4 @@ vim.keymap.set("n", "<F5>", function()
 end, { desc = "Compile and Run main.cpp" })
 
 vim.keymap.set("n", "<C-a>", "ggvG$", { desc = "Select All" })
+vim.keymap.set("x", "G", "G$", { remap = true, desc = "Select to End of File (Inclusive)" })
