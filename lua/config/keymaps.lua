@@ -7,8 +7,7 @@ vim.keymap.set("n", "<F5>", function()
     local file_dir = vim.fn.expand("%:h")
 
     -- 2. Define the full command pipeline
-    local pipeline = "g++ main.cpp -o main && ./main"
-
+    local pipeline = "gcc game.cpp -lraylib -lGL -lm -lpthread -ldl -lrt -lX11 && ./a.out"
     -- 3. Execute the command using the shell (sh)
     -- The first argument is the shell executable, the second is the -c flag,
     -- and the third is the command pipeline string.
@@ -22,3 +21,5 @@ vim.keymap.set("n", "<F5>", function()
         vim.notify("🟢 Compiled and Executed Successfully", vim.log.levels.INFO)
     end
 end, { desc = "Compile and Run main.cpp" })
+
+vim.keymap.set("n", "<C-a>", "ggvG$", { desc = "Select All" })
